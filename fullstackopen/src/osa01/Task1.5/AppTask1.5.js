@@ -26,14 +26,12 @@ const App = () => {
         ]
     }
 
-    const total = parts[0].exercises + parts[1].exercises + parts[2].exercises
+    const total = course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises
 
     return(
         <div>
-            <Header course={course} />
-
-            <Content parts={parts} />
-            
+            <Header course={course.title} />
+            <Content course={course} />
             <Total total={'Number of exercises ' + total} />
         </div>
     )
