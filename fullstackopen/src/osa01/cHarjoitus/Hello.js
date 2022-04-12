@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Hello = ({nimi, ika}) => {
+
     const bornYear = () => new Date().getFullYear() - ika
+
 // const Hello = (props) => {
     // const bornYear = () => {
     //     const yearNow = new Date().getFullYear()
@@ -25,8 +27,8 @@ const Hello = ({nimi, ika}) => {
 
     return(
         <div>
-            <p>Hello {nimi}, your age is {ika} years old</p>
-            <p>So you were probably born in {bornYear()}</p>
+            <p>Hello {nimi}, your age is {ika}</p>
+            <p>So you probably born in {bornYear()}</p>
         </div>
     )
 }
