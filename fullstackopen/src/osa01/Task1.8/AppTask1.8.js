@@ -7,6 +7,8 @@ const App = () => {
     const [neutral, setNeutral] = useState(0)
     const [bad, setBad] = useState(0)
     const all = good + bad + neutral
+    const average = (good + bad + neutral) / 3
+    const posPer = (good / all) * 100
 
     return(
         <div>
@@ -15,6 +17,8 @@ const App = () => {
           neutral={neutral} setNeutral={setNeutral}
           bad={bad} setBad={setBad}
           all={all}
+          average={average}
+          posPer={posPer}
           />
         </div>
     )

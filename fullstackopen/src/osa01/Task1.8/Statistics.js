@@ -19,8 +19,8 @@ return(
            <p>Neutral {props.neutral}</p>
            <p>Bad {props.bad}</p>
            <p>All {props.all}</p>
-           <p>Average {props.all / 3}</p>
-           <p>Positive {props.good / props.all * 100}%</p>
+           <p>Average {props.average}</p>
+           <p>Positive {props.posPer} %</p>
 
     </div>
 )
