@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 const App = () => {
 
     const anecdotes = [
@@ -12,25 +13,49 @@ const App = () => {
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when dianosing patients.',
     ]
 
+    const points = 
+    {
+      0: 1,
+      1: 2,
+      2: 3,
+      3: 4,
+      4: 5,
+      5: 6,
+      6: 7,
+    }
+
     const getRandomString = () => {
-      return anecdotes[Math.floor(Math.random() * anecdotes.length)]
+      const index = Math.floor(Math.random() * anecdotes.length)
+      return index
     }
 
     const [random, setRandom] = useState([])
-  
+    const [vote, setVote] = useState(0)
+    const [voteClicks, setVoteclicks] = useState([])
+    const [showResult, setShowresult] = useState(false)
+    const [index, setIndex] = useState(null)
 
     const clickHandle = () => {
       const randomString = getRandomString()
-      setRandom(randomString)
+      setRandom(anecdotes[randomString])
+      setIndex(randomString)
+  }
+
+  const getVote = () => {
+    setVoteclicks(voteClicks.concat(vote))
+    setVote(points[index] + 1)
+    setShowresult(true)
   }
 
     return(
         <div style={{padding: '20px'}}>
           <p>{anecdotes[0]}</p>
+          <p>{random}</p>
+          <p > {showResult?"Has " + points[index] + " votes": " "} {index}</p>
           <div>
+            <button onClick={getVote}>Vote</button>
             <button onClick={clickHandle}>Next Anecdotes</button>
           </div>
-          <p>{random}</p>
         </div>
     )
 }
