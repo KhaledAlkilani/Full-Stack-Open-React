@@ -17,18 +17,18 @@ const App = () => {
       return anecdotes[Math.floor(Math.random() * anecdotes.length)]
     }
 
-    const [selected, setSelected] = useState([])
+    const [random, setRandom] = useState([])
 
     const clickHandle = () => {
       const randomString = getRandomString()
-      setSelected(randomString)
+      setRandom(randomString)
   }
 
     return(
         <div style={{padding: '20px'}}>
           <p>{anecdotes[0]}</p>
           <div><button onClick={clickHandle}>Next Anecdotes</button></div>
-          <p>{selected}</p>
+          <p>{random}</p>
         </div>
     )
 }
