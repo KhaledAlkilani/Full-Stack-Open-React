@@ -30,8 +30,11 @@ const App = () => {
   
     });
 
+    const mostVoted = Object.keys(vote).sort((a, b) => vote[b] - vote[a])[0];
+
     const [random, setRandom] = useState([])
     const [showResult, setShowresult] = useState(false)
+    const [showMost, setShowMost] = useState(false)
 
     const getRandomString = () => {
       const index = Math.floor(Math.random() * anecdotes.length)
@@ -52,6 +55,7 @@ const App = () => {
       ...vote,
       [random]: vote[random] + 1,
     })
+    setShowMost(true)
   }
 
     return(
@@ -62,6 +66,8 @@ const App = () => {
           <div>
             <button onClick={getVote} >  Vote</button>
             <button onClick={clickHandle}>Next Anecdotes</button>
+            <h2>Anecdote with most votes</h2>
+            <p>{showMost ? "<" + anecdotes[mostVoted] + "> has " + vote[mostVoted] + " votes" : " "}</p>
           </div>
           <div>
           </div>
