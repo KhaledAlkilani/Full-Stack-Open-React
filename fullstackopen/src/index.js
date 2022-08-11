@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './osa01/Task1.14/AppTask1.14';
+import App from './Osa07/Harjoitukset/AppTask7';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
